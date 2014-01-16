@@ -10,17 +10,19 @@ category: "Jekyll"
 
 部署环境:Windows 7-64位
 
-##Jekyll总体部署流程
+## Jekyll总体部署流程
 
-h3. Step1
+Jekyll is a simple, blog aware, static site generator. It takes a template directory (representing the raw form of a website), runs it through Textile or Markdown and Liquid converters, and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.
+
+## Step1
 
 Jekyll是使用ruby写的静态网页生成工具,要本地能预览就要先配置好Ruby
 
-h3. Step2
+## Step2
 
 装Rubyinstaller-1.9.3-p484吧,稳定健壮些,之前装了Ruby2.0出来一堆BUG束手无策，安装时把选项都勾上可以帮你添加好系统环境变量
 
-h3. Step3
+## Step3
 
 对应还要安装一个叫DevKit-tdm-32-4.5.2-20110712-1620-sfx.exe在Windows平台下模拟编译C/C++的拓展包
 解压好Dev后,CMD进入到解压目录,依次输入以下命令
@@ -30,7 +32,7 @@ $ ruby dk.rb init     #初始化生成一个config.yml文件写入ruby的安装�
 $ ruby dk.rb install   #安装
 {% endhighlight %}
 
-h3. Step4
+## Step4
 
 利用gem命令安装jekyll
 	
@@ -39,7 +41,7 @@ $ gem install jekyll  #目前默认安装的是1.4.3,这个版本目前对WINDOW
 $ gem install jekyll --version "=1.4.2"
 {% endhighlight %}
 
-h3. Step5
+## Step5
 
 CD到你仓库目录下,进行本地加载
 	
