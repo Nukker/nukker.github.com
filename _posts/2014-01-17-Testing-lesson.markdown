@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  《回归BUG的智慧》课程比赛
+title:  《回归BUG的智慧》课程总结
 date:   2014-01-17 00:08
 category: "Testing"
 ---
