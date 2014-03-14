@@ -1,0 +1,68 @@
+---
+layout: post
+title:  C++学习之Atoi实现
+date:   2014-03-14 14:04:53
+category: "C++"
+---
+
+##主要逻辑点:
+1.空格/制表符等符号的跳过判断
+2.正负号处理
+3.超过INT最大范围取INT_MAX 和 INT_MIN 值
+
+```c++
+#include<iostream>
+#include<string>
+#include <limits>
+
+using namespace std;
+
+
+
+int StrToInt(const char* str){
+	int result = 0;
+	int flag = 1;
+	const char* tmpstr = str;
+	/*跳过空格和制表符*/
+	while(*tmpstr==' '||*tmpstr=='\t'||*tmpstr=='\n'||*tmpstr=='\r'||*tmpstr=='\b'|*tmpstr=='\f'){
+		tmpstr++;
+	}											  
+	/*保存符号*/
+	if(*tmpstr == '-')
+    {
+        flag = -1;
+        tmpstr++;
+    }
+	else if(*tmpstr == '+')
+		tmpstr++;
+
+
+	while(*tmpstr)
+	{
+		if(*tmpstr >= '0' && *tmpstr <= '9')
+			//超过INT最大范围取INT_MAX 和 INT_MIN 值
+			if(result > ( 10*result + *tmpstr - '0'))
+				return 	flag == 1 ? INT_MAX:INT_MIN;
+			else	
+				result = 10*result + *tmpstr - '0';
+		else
+		{
+			return result*flag;
+		}
+		tmpstr++;
+	}
+	return result*flag;
+}
+
+int main(){
+
+	string testdata[] = {" ","1","+1","-1","123","-123","010","+00131204","-01324000",\
+	"2147483647","-2147483647","-2147483648","2147483648","-2147483649","214748364921474836492147483649"};
+	int len = sizeof(testdata)/sizeof(string);
+	while(len--){
+		cout << testdata[len] << ":" <<StrToInt(testdata[len].c_str()) << endl;
+	}
+	system("pause");
+	return 0;
+}
+```
