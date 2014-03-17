@@ -2,7 +2,7 @@
 layout: post
 title:  C++学习之Atoi实现
 date:   2014-03-14 14:04:53
-category: "C++"
+category: "Cplusplus"
 ---
 
 ##主要逻辑点
