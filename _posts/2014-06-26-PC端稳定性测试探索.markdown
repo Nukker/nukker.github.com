@@ -1,0 +1,9 @@
+---
+layout: post
+title:  PC端稳定性测试探索
+date:   2014年6月26日 15:31:20##测试方法
+category: "Test"
+---
+
+
+http://qa.blog.163.com/blog/static/190147002201441915318713/
